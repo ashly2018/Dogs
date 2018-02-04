@@ -8,7 +8,7 @@ import automationFramework.dice.base.BasePageObject;
 
 public class HomePage extends BasePageObject<LoginPage> {
 
-	
+	// Locators of homepage
 	private static final String URL = "https://www.merieuxnutrisciences.com/us/";
 	private By firstNameField = By.xpath("//input[@id='edit-submitted-first-name']");
 	private By lastNameField = By.xpath("//input[@id='edit-submitted-last-name']");
@@ -17,7 +17,7 @@ public class HomePage extends BasePageObject<LoginPage> {
 	private By stateNameField = By.xpath("//*[@id='edit-submitted-state-province']");
 	private By postalCodeField = By.xpath("//input[@id='edit-submitted-postal-code']");
 	private By submitButton = By.xpath("//*[@id='webform-client-form-32']/div/div[14]/input");
-	//search
+	// search
 	private By searchButton = By.xpath("//*[@id='edit-keys-27']");
 
 	public HomePage(WebDriver driver, Logger log) {
@@ -39,22 +39,23 @@ public class HomePage extends BasePageObject<LoginPage> {
 		type(stateName, stateNameField);
 		type(postalCode, postalCodeField);
 	}
-	
-	public void pushSubmitButton(){
-		 log.info("Clicking on submit button.");
-		 click(submitButton);
+
+	public void pushSubmitButton() {
+		log.info("Clicking on submit button.");
+		click(submitButton);
 	}
-	
-	public void pushSearchButton(){
+
+	public void pushSearchButton() {
 		log.info("Clicking on search button.");
 		click(searchButton);
 	}
 
-	// public ProfilePage pushSignInButton(){
-	// log.info("Clicking on sign in button.");
-	// click(submitButton);
-	// return new ProfilePage(driver, log);
+	//my name is kevin and I add this method.
+	public ProfilePage pushSignInButton() {
+		log.info("Clicking on sign in button.");
+		click(submitButton);
+		return new ProfilePage(driver, log);
 
-	// }
+	}
 
 }
